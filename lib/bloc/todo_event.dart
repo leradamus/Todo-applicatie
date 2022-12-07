@@ -16,23 +16,3 @@ class ToggleTodoEvent extends TodoEvent{
 
   ToggleTodoEvent(this.todo, this.completed);
 }
-/*
-
-class ToDoCompletedEvent extends TodoEvent{
-  final Todo todo;
-
-  ToDoCompletedEvent({required this.todo});
-}
-
-class ToDoUncompletedEvent extends TodoEvent{
-  final Todo todo;
-
-  ToDoUncompletedEvent({required this.todo});
-}
-
-class TodoCreatedEvent extends TodoEvent {
-  final String title;
-
-  TodoCreatedEvent({required this.title});
-}
-*/

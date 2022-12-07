@@ -13,8 +13,10 @@ class ToDoRepository{
 
   Future<List<Todo>> getAllToDos() => _database.todos.where().findAll();
 
-  Future toggleTodo(Todo todo, bool completed) {
-    return _database.todos.put(Todo.createWithId(todo.id, todo.text, todo.complete));
+  Future toggleTodo(Todo todo, bool completed) async {
+    await _database.writeTxn((){
+      return _database.todos.put(Todo.createWithId(todo.id, todo.text, todo.complete));
+    });
   }
 
   Future addTodo(Todo todo) async {
