@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_application/bloc/todo_state.dart';
-import 'package:todo_application/models/todo_item.dart';
-
 import '../bloc/todo_bloc.dart';
 
 class TodoList extends StatelessWidget {
@@ -28,5 +26,36 @@ Widget _todoItemsLoading(BuildContext context){
 
 
 Widget _todoItemsLoaded(BuildContext context, TodoLoadedState state){
-  return const TodoItem(state);
+  return ListView.builder(
+      itemBuilder:(context, index){
+        return Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Container(
+            color: const Color(0x76ffffff),
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: Checkbox(
+                    value: state.items[index].complete,
+                    onChanged: (value){
+                      context.read<TodoBloc>().add(ToggleTodoEvent(state.items[index], value ?? false));
+                    },
+                  ),
+                ),
+                Text(
+                  state.items[index].text,
+                  style: const TextStyle(
+                    fontSize: 32,
+                    color: Colors.amber,
+                    fontFamily: 'DancingScript',
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    itemCount: state.items.length,
+  );
 }

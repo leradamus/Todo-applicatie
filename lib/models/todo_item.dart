@@ -6,44 +6,6 @@ import 'package:todo_application/bloc/todo_state.dart';
 
 part 'todo_item.g.dart';
 
-class TodoItem extends StatelessWidget {
-  final TodoLoadedState state;
-
-  const TodoItem(this.state, {super.key})
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(itemBuilder: (context, index){
-      return Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Container(
-          color: const Color(0x76ffffff),
-          child: Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(24.0),
-                child: Checkbox(
-                  value: state.items[index].complete,
-                  onChanged: (value){
-                    context.read<TodoBloc>().add(ToggleTodoEvent(state.items[index], value ?? false));
-                  },
-                ),
-              ),
-              Text(
-                state.items[index].text,
-                style: const TextStyle(
-                  fontSize: 32,
-                  color: Colors.amber,
-                  fontFamily: 'DancingScript',
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
-    });
-  }
-}
 
 @Collection()
 class Todo {
