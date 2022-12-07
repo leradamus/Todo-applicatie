@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_application/bloc/todo_state.dart';
-import 'package:todo_application/models/create_todo.dart';
 import 'package:todo_application/models/todo_item.dart';
 
 import '../bloc/todo_bloc.dart';

@@ -8,12 +8,11 @@ part 'todo_item.g.dart';
 
 class TodoItem extends StatelessWidget {
   final TodoLoadedState state;
-  final BuildContext context;
 
-  const TodoItem(this.state, this.context, {super.key})
+  const TodoItem(this.state, {super.key})
 
   @override
-  Widget build() {
+  Widget build(BuildContext context) {
     return ListView.builder(itemBuilder: (context, index){
       return Padding(
         padding: const EdgeInsets.all(24.0),
