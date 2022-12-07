@@ -1,6 +1,14 @@
-import '../todo_item.dart';
+import 'package:flutter/cupertino.dart';
 
-class ToDoState {
-  List<ToDo> items;
-  ToDoState({required this.items});
+import '../models/todo_item.dart';
+
+@immutable
+class TodoState {}
+
+class TodoLoadingState extends TodoState {}
+
+class TodoLoadedState extends TodoState {
+  final List<Todo> items;
+
+  TodoLoadedState(this.items);
 }
