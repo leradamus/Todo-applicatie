@@ -1,11 +1,10 @@
 import 'package:isar/isar.dart';
-import 'package:todo_application/models/todo_item.dart';
+import 'package:todo_application/models/todo.dart';
 
-
-class ToDoRepository{
+class ToDoRepository {
   late Isar _database;
 
-  ToDoRepository(){
+  ToDoRepository() {
     _database = Isar.openSync([TodoSchema]);
   }
 
@@ -14,8 +13,9 @@ class ToDoRepository{
   Future<List<Todo>> getAllToDos() => _database.todos.where().findAll();
 
   Future toggleTodo(Todo todo, bool completed) async {
-    await _database.writeTxn((){
-      return _database.todos.put(Todo.createWithId(todo.id, todo.text, todo.complete));
+    await _database.writeTxn(() {
+      return _database.todos
+          .put(Todo.createWithId(todo.id, todo.text, completed));
     });
   }
 

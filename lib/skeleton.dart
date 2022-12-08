@@ -11,9 +11,7 @@ class Skeleton extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFFF7A727),
-        title: const Center(
-            child: Text('2DO')
-        ),
+        title: const Center(child: Text('2DO')),
       ),
       body: SafeArea(
         child: widget,

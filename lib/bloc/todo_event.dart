@@ -5,12 +5,12 @@ abstract class TodoEvent {}
 
 class TodoListUpdatedEvent extends TodoEvent {}
 
-class AddTodoEvent extends TodoEvent{
+class AddTodoEvent extends TodoEvent {
   final String text;
   AddTodoEvent(this.text);
 }
 
-class ToggleTodoEvent extends TodoEvent{
+class ToggleTodoEvent extends TodoEvent {
   final Todo todo;
   final bool completed;
 

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../models/todo_item.dart';
+import '../models/todo.dart';
 
 @immutable
 class TodoState {}

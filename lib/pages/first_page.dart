@@ -10,9 +10,9 @@ class FirstPage extends StatelessWidget {
     return Hero(
       tag: 'hero1',
       child: InkWell(
-      onTap: () => GoRouter.of(context).push('/2'),
-      child: SvgPicture.asset('assets/images/undraw_note_list_re_r4u9.svg')
-      ),
+          onTap: () => GoRouter.of(context).push('/2'),
+          child:
+              SvgPicture.asset('assets/images/undraw_note_list_re_r4u9.svg')),
     );
   }
 }

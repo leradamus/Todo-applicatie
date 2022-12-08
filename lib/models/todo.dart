@@ -1,6 +1,6 @@
 import 'package:isar/isar.dart';
-part 'todo_item.g.dart';
 
+part '../components/todo_item.g.dart';
 
 @Collection()
 class Todo {
@@ -9,5 +9,6 @@ class Todo {
   final bool complete;
 
   Todo.createWithId(this.id, this.text, this.complete);
+
   Todo(this.text, this.complete);
 }

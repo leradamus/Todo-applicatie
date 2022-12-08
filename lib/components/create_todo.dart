@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_application/bloc/todo_bloc.dart';
 
 class CreateToDoItem extends StatefulWidget {
-
   const CreateToDoItem({Key? key}) : super(key: key);
 
   @override
@@ -11,7 +10,6 @@ class CreateToDoItem extends StatefulWidget {
 }
 
 class _CreateToDoItemState extends State<CreateToDoItem> {
-
   final TextEditingController _controller = TextEditingController();
 
   @override
@@ -22,8 +20,7 @@ class _CreateToDoItemState extends State<CreateToDoItem> {
         controller: _controller,
         onSubmitted: (value) {
           _controller.clear();
-          BlocProvider.of<TodoBloc>(context)
-              .add(AddTodoEvent(value));
+          BlocProvider.of<TodoBloc>(context).add(AddTodoEvent(value));
         },
       ),
     );

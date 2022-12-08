@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:todo_application/pages/first_page.dart';
 import 'package:todo_application/pages/second_page.dart';
 import 'package:todo_application/skeleton.dart';
-
 import 'bloc/todo_bloc.dart';
 import 'bloc/todo_repository.dart';
 
@@ -25,11 +24,9 @@ final _router = GoRouter(
             path: '/2',
             builder: (context, state) => const SecondPage(),
           )
-        ]
-    )
+        ])
   ],
 );
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -51,5 +48,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
